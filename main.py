@@ -29,11 +29,11 @@ class JsonHandler:
             # list case
             elif isinstance(resource_value, list):
                 for resource in resource_value:
-                    if "*" in resource and resource.count('*') == 1:
+                    if "*" == resource:
                         return False
 
             # str case
-            elif '*' in resource_value and resource_value.count('*') == 1:
+            elif '*' == resource_value:
                 return False
         return True
 

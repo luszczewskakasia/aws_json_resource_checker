@@ -11,9 +11,7 @@
                     "s3:DeleteObject"
                 ],
                 "Resource": [
-                    "test-resource",
-                    "test-resource2",
-                    "test-resource3/*"
+                   "*"
                 ]
             }
         ]

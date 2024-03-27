@@ -11,7 +11,7 @@
                     "s3:DeleteObject"
                 ],
                 "Resource": [
-                    "arn:aws:s3:::my-app-logs/*"
+                    "*"
                 ]
             },
             {
@@ -20,9 +20,7 @@
                     "foo"
                 ],
                 "Resource": [
-                    "test-resource",
-                    "test-resource2",
-                    "test-resource3/*"
+                    "*"
                 ]
             }
         ]

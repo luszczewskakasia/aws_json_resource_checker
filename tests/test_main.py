@@ -46,7 +46,7 @@ class LoadedFile(unittest.TestCase):
     def test_file_has_single_resource_key(self):
         json_handler = JsonHandler('test_sample_files/mock_iam_string.json')
         returned_value = json_handler.is_asterisk_resource()
-        self.assertTrue(returned_value)
+        self.assertFalse(returned_value)
 
     def test_file_has_two_resources_string(self):
         json_handler = JsonHandler('test_sample_files/mock_iam_two_resources_string.json')
@@ -61,6 +61,17 @@ class LoadedFile(unittest.TestCase):
     # it has more than one '*' in Resource
     def test_file_has_more_asterisks_in_resource(self):
         json_handler = JsonHandler('test_sample_files/mock_iam_more_asterisks_in_resource.json')
+        returned_value = json_handler.is_asterisk_resource()
+        self.assertTrue(returned_value)
+
+    # it has more elements in Resource than just '*'
+    def test_file_has_more_elements_in_resource_list(self):
+        json_handler = JsonHandler('test_sample_files/mock_iam_more_elements_in_resource_list.json')
+        returned_value = json_handler.is_asterisk_resource()
+        self.assertTrue(returned_value)
+
+    def test_file_has_more_elements_in_resource_string(self):
+        json_handler = JsonHandler('test_sample_files/mock_iam_more_elements_in_resource_string.json')
         returned_value = json_handler.is_asterisk_resource()
         self.assertTrue(returned_value)
 
